@@ -1,0 +1,23 @@
+1. google console for api key 
+    i. create project
+    ii. enable youtibe data api v3
+    iii. generate api key
+    //google console: api key=AIzaSyA-ti4eSqM7QSF4SDKcE9QkkpA4b-PiN8Y
+2. get the end point gorm docs 
+    // https://www.googleapis.com/youtube/v3/search
+    https://developers.google.com/youtube/v3/docs/search/list
+    we need the endpoint to put the key for authentication
+    https://developers.google.com/youtube/v3/docs/search/list#http-request
+
+3. we add the parameters needed
+    https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyA-ti4eSqM7QSF4SDKcE9QkkpA4b-PiN8Y&type=video&q=cats
+    
+    I. so we add // part=snippet
+    II.  the api key generated from google console
+        //&key-key=AIzaSyA-ti4eSqM7QSF4SDKcE9QkkpA4b=PiN8Y
+    III.  the type of what we want to request from youtube in this case it is video
+        //&type=video
+    IV.  the query for my search is just 'cats' so q=cats 
+        //&q=cats
+4. since the axios.get  returns a resolved promise we make it a async fnx with awai
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2EjRAClt28M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

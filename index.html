@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youtube</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/4e292ec4a8.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="start">
+        <i class="fas fa-bars col-3"></i>
+        <a href="" class="main-home-link"><span class="youtube-logo"><i class="fab fa-youtube"></i>Youtube</span></a>
+      </div>
+      <div class="center col-6">
+        <form action="" id="form" class="search-wrap">
+          <input
+            type="search"
+            name="query"
+            id="search-input"
+            class="col-10"
+           placeholder="Search"
+          />
+          <button type="submit" class="col btn-search" >
+            <i class="fas fa-search" alt="Search"></i>
+          </button>
+          <i class="fas fa-microphone col"></i>
+        </form>
+      </div>
+      <div class="end">
+        <i class="fas fa-video"></i>
+      </div>
+      <i class="fas fa-th"></i>
+      <i class="fas fa-bell"></i>
+      <span class="user-logged">L</span>
+    </header>
+    <main>
+      <nav class="nav-left col-3">
+        <a href="">home</a>
+      </nav>
+       <div class="container col-9">
+          <nav class="nav-center">
+          <a href="">all</a>
+          </nav>
+          <div class="search-result">
+            <div class="wrap">
+              <div class="search-vid col-6"></div>
+              <div class="vid-detail col-6"></div>
+            </div>
+
+            <div class="wrap">
+              <div class="search-vid col-6"></div>
+              <div class="vid-detail col-6">
+                <div class="text-wrap">
+                  <div class="title-info d-flex justify-content-between"><span class="title">searched video title</span><button class="dots-3"><i class="fas fa-ellipsis-v"></i></button></div>
+                  <div class="video-history"><span class="views">1M views</span><i class="fas fa-dot icon-dot"></i><span class="posted-date">2 years ago</span></div>
+                  <div class="channel-info"><img src="" alt="" class="channel-img"><a href="" class="channel-link">mychannel name</a><span class="confirmed-ch"><i class="fas fa-check-circle"></i></span></div>
+                  <div class="description"><p>Lorem ipsum dolor sit.</p></div>
+                  <div><span class="CC"><i class="far fa-closed-captioning"></i></span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="wrap">
+              <div class="search-vid col-6"></div>
+              <div class="vid-detail col-6"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
+
+ <!-- <div class="suggested-video">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/DCRul6J49zs"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe> -->
