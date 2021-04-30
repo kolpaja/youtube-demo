@@ -119,6 +119,8 @@ main {
   background-color: var(--main-bg-primary-color);
   height: 100vh;
 }
+.nav-left .nav-explore {
+}
 /*
 *style result videos 
  */

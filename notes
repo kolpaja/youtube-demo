@@ -21,3 +21,33 @@
         //&q=cats
 4. since the axios.get  returns a resolved promise we make it a async fnx with awai
 <iframe width="560" height="315" src="https://www.youtube.com/embed/2EjRAClt28M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+...
+reports
+https://www.googleapis.com/youtube/v3/videos?part=statistics&id=G0fHE1N3iAk&key=AIzaSyA-ti4eSqM7QSF4SDKcE9QkkpA4b-PiN8Y
+...
+date frames
+
+moment().diff(moment('2013-11-09T22:11:37Z').format('YYYY-MM-DD'),'months')
+we can add at the end the type of diff we want
+
+moment().diff(moment('2013-11-09T22:11:37Z').format('YYYY-MM-DD')) = 235826987226 milliseconds
+
+...
+@youtube search result card
+ `<div class="search-vid col-6">
+ <iframe width="350" height="200" src="https://www.youtube.com/embed/${item.id.videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ </div>
+ <div class="vid-detail col-6">
+    <div class="text-wrap">
+    <div class="title-info d-flex justify-content-between">
+    <span class="title">${item.snippet.thumbnails.title}</span>
+    <button class="dots-3">
+    <i class="fas fa-ellipsis-v"></i></button>
+    </div>
+    <div class="video-history"><span class="views">1M views</span><i class="fas fa-dot icon-dot"></i><span class="posted-date">${item.snippet.publishTime}</span></div>
+    <div class="channel-info"><img src="" alt="" class="channel-img"><a href="" class="channel-link">${item.snippet.channelTitle}</a><span class="confirmed-ch"><i class="fas fa-check-circle"></i></span></div>
+    <div class="description"><p>${item.snippet.description}</p></div>
+    <div><span class="CC"><i class="far fa-closed-captioning"></i></span></div>
+    </div>`
+*/
