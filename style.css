@@ -5,7 +5,7 @@
   --icon-second-color: #828282;
   --icon-third-color: #f00;
   --icon-forth-color: #ffae00;
-  --icon-fifth-color: #212121;
+  --icon-fifth-color: #1a1a1a;
   --icon-sixth-color: #f8f8f8;
 }
 * {
@@ -127,7 +127,7 @@ main {
   padding: 16px 24px;
   display: flex;
   flex-direction: column;
-  background-color: blue;
+  background-color: var(--main-bg-secondary-color);
   min-height: 5000px;
 }
 .nav-center {
@@ -139,7 +139,7 @@ main {
   height: 200px;
 }
 .wrap {
-  background-color: var(--icon-forth-color);
+  background-color: transparent;
   width: 100%;
   height: 100%;
   display: flex;
@@ -149,13 +149,13 @@ main {
   color: var(--icon-second-color);
 }
 .search-vid {
-  background-color: chartreuse;
+  background-color: transparent;
   width: 100%;
   height: 100%;
   padding-right: 16px;
 }
 .vid-detail {
-  background-color: cyan;
+  background-color: transparent;
   width: 100%;
   height: 100%;
   padding: 0;
@@ -168,10 +168,32 @@ iframe {
   font-size: 18px;
   font-weight: bold;
   color: #212121;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.title-info {
+  height: 24px;
 }
 .dots-3 {
   width: 40px;
   height: 40px;
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+}
+.fa-ellipsis-v {
+  display: none;
+}
+.wrap:hover .fa-ellipsis-v {
+  display: block;
+}
+.dots-3:hover .fa-ellipsis-v {
+  color: var(--icon-fifth-color);
+}
+
+.video-history {
+  height: 18px;
 }
 .icon-dot {
   content: "•";
@@ -187,6 +209,7 @@ iframe {
   justify-content: flex-start;
   align-items: center;
   font-size: 13px;
+  height: 51;
 }
 .channel-img {
   width: 24px;
@@ -200,6 +223,13 @@ iframe {
 }
 .description {
   margin-bottom: 8px;
+  max-height: 50px;
+  overflow: hidden;
+  /* white-space: nowrap; */
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 .fa-closed-captioning {
   color: var(--icon-second-color);
