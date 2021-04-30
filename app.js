@@ -1,6 +1,9 @@
-//? script for youtube search
+
 //google console: api key=AIzaSyA-ti4eSqM7QSF4SDKcE9QkkpA4b-PiN8Y
 //@ endpoint https://www.googleapis.com/youtube/v3/search
+
+//? data fns library added
+import { formatDistance, subDays } from 'date-fns';
 
 const form = document.querySelector("#form");
 const API_key = "AIzaSyA-ti4eSqM7QSF4SDKcE9QkkpA4b-PiN8Y";
