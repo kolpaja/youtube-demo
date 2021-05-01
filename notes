@@ -22,6 +22,11 @@
 4. since the axios.get  returns a resolved promise we make it a async fnx with awai
 <iframe width="560" height="315" src="https://www.youtube.com/embed/2EjRAClt28M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+5. we better use this type of API request since we want the title/desciption/timePosted/viewCount/channelName/
+ from this doc:  https://developers.google.com/youtube/v3/getting-started#quota
+
+URL: https://www.googleapis.com/youtube/v3/videos?id=7lCDEYXw3mM&key=YOUR_API_KEY
+     &part=snippet,statistics
 ...
 reports
 https://www.googleapis.com/youtube/v3/videos?part=statistics&id=G0fHE1N3iAk&key=AIzaSyA-ti4eSqM7QSF4SDKcE9QkkpA4b-PiN8Y
