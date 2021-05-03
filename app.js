@@ -29,7 +29,6 @@ const searchVideosViewCount = async (key, videoId) => {
         .then((res) => res.data.items.forEach(view => renderViews(view)));
 };
 function renderViews(view) {
-    console.log('element.statistics.viewCount', view.statistics.viewCount);
     const viewsSpan = document.querySelector(".views");
     const views = view.statistics.viewCount;
     if (views < 1000) {
