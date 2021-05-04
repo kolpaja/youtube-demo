@@ -9,7 +9,7 @@ const searchResult = document.querySelector(".search-result");
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const searchText = form.elements.query.value;
-    const items = await searchVideos(API_key, searchText, 2);
+    const items = await searchVideos(API_key, searchText, 3);
 
     renderVideoCard(items.reverse());
 });
@@ -26,17 +26,18 @@ const searchVideosViewCount = async (key, videoId) => {
         .get(
             `https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${videoId}&key=${key}`
         )
-        .then((res) => res.data.items.forEach(view => renderViews(view)));
+        .then((res) => {
+            console.log('asy:', res.data.items[0].statistics.viewCount);
+            return renderViews(res.data.items[0].statistics.viewCount);
+        });
 };
-function renderViews(view) {
-    const viewsSpan = document.querySelector(".views");
-    const views = view.statistics.viewCount;
+function renderViews(views) {
     if (views < 1000) {
-        viewsSpan.textContent = views;
+        return views;
     } else if (views < 1000000) {
-        viewsSpan.textContent = `${Math.floor((views / 1000))}K views`;
+        return `${Math.floor((views / 1000))}K views`;
     } else {
-        viewsSpan.textContent = `${Math.floor(views / 1000000)}M views`;
+        return `${Math.floor(views / 1000000)}M views`;
     }
 
 }
@@ -63,13 +64,13 @@ function PostedTime(minutes, days, months) {
         }
     }
 }
-function renderVideoCard(items) {
+const renderVideoCard = (items) => {
     searchResult.innerHTML = "";
-    items.forEach((item) => {
+    items.forEach(async (item) => {
         const wrapping = document.createElement("div");
         wrapping.classList.add("wrap");
 
-        searchVideosViewCount(API_key, item.id.videoId);
+        const views = await searchVideosViewCount(API_key, item.id.videoId);
 
         const minutes = parseInt(
             moment().diff(
@@ -100,7 +101,7 @@ function renderVideoCard(items) {
         <button class="dots-3">
         <i class="fas fa-ellipsis-v"></i></button>
         </div>
-        <div class="video-history"><span class="views"></span><i class="fas fa-dot icon-dot"></i><span class="posted-date"></span>${PostedTime(minutes, days, months)}</div>
+        <div class="video-history"><span class="views">${views}</span><i class="fas fa-dot icon-dot"></i><span class="posted-date"></span>${PostedTime(minutes, days, months)}</div>
         <div class="channel-info"><img src="" alt="" class="channel-img"><a href="" class="channel-link">${item.snippet.channelTitle
             }</a><span class="confirmed-ch"><i class="fas fa-check-circle"></i></span></div>
         <div class="description">${item.snippet.description}</div>
