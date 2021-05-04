@@ -153,12 +153,14 @@ main {
   min-height: 5000px;
 }
 .nav-center {
-  overflow-x: scroll;
+  width: 80vw;
+  border-bottom: 1px solid var(--icon-first-color);
 }
 .search-result {
   background-color: var(--main-bg-secondary-color);
   width: 100%;
   height: 200px;
+  padding: 0 10px;
 }
 .wrap {
   background-color: transparent;
@@ -173,19 +175,27 @@ main {
 .search-vid {
   background-color: transparent;
   width: 100%;
-  height: 100%;
-  padding-right: 16px;
+  margin-right: 16px;
+  position: relative;
+  overflow: hidden;
+  padding-top: 62.5%;
+}
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: auto;
 }
 .vid-detail {
   background-color: transparent;
   width: 100%;
-  height: 100%;
   padding: 0;
   margin: 0;
 }
-iframe {
-  padding-right: 10px;
-}
+
 .title {
   font-size: 18px;
   font-weight: bold;
@@ -279,4 +289,39 @@ a:hover {
 #search-input:focus {
   border: 1px solid #474af8;
   outline: none;
+}
+
+/* responsive style */
+
+@media (min-width: 960px) {
+  .nav-left {
+    max-width: 20%;
+  }
+}
+
+@media (min-width: 1060px) {
+  .nav-left {
+    max-width: 25%;
+  }
+  .search-vid {
+    max-width: 360px;
+    max-height: 300px;
+  }
+}
+@media (max-width: 800px) {
+  .nav-left {
+    display: none;
+  }
+  .containers {
+    width: 100%;
+    padding: 10px 16px;
+  }
+}
+@media (max-width: 870px) {
+  .nav-left {
+    max-width: 15%;
+  }
+  .nav-links {
+    display: none;
+  }
 }

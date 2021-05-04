@@ -9,7 +9,7 @@ const searchResult = document.querySelector(".search-result");
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const searchText = form.elements.query.value;
-    const items = await searchVideos(API_key, searchText, 1);
+    const items = await searchVideos(API_key, searchText, 2);
 
     renderVideoCard(items.reverse());
 });
@@ -90,10 +90,10 @@ function renderVideoCard(items) {
             )
         );
         //@prepending the video search result
-        wrapping.innerHTML = `<div class="search-vid col-6">
-        <iframe width="350" height="200" src="https://www.youtube.com/embed/${item.id.videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        wrapping.innerHTML = `<div class="search-vid col-4 ">
+        <iframe class="responsive-iframe" src="https://www.youtube.com/embed/${item.id.videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <div class="vid-detail col-6">
+        <div class="vid-detail col-8">
         <div class="text-wrap">
         <div class="title-info d-flex justify-content-between">
         <span class="title">${item.snippet.title}</span>
